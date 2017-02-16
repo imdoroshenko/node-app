@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+set -e
+DIR=$(dirname $0)
+cd $DIR/../
+
+APP_NAME=$(bin/app name)
+APP_VERSION=$(bin/app version)
+
+echo $APP_NAME $APP_VERSION
+
+echo "docker build -t $APP_NAME:$APP_VERSION ."
+
+docker build -t $APP_NAME:$APP_VERSION .
