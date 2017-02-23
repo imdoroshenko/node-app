@@ -10,7 +10,7 @@ COPY package.json /usr/src/app/
 
 WORKDIR /usr/src/app
 
-RUN npm i
+RUN npm i --production
 
 EXPOSE 3000
 

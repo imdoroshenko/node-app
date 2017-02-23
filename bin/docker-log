@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+APP_NAME=$(bin/app name)
+APP_VERSION=$(bin/app version)
+
+CONTAINER_ID=$(docker ps -q -f ancestor=$APP_NAME:$APP_VERSION)
+
+if [ -n "$CONTAINER_ID" ];
+then
+    CMD="docker logs -f $CONTAINER_ID"
+    echo $CMD
+    $CMD
+else
+    echo "No containers running"
+fi

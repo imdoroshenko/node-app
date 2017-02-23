@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+set -e
+DIR=$(dirname $0)
+cd $DIR/../
+
+APP_NAME=$(bin/app name)
+APP_VERSION=$(bin/app version)
+
+bin/docker-stop
+
+CMD="docker run -d -p 3000:3000 $APP_NAME:$APP_VERSION"
+
+echo $CMD
+
+$CMD
