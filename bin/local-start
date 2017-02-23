@@ -5,9 +5,9 @@ cd $DIR/../
 
 echo "ENV:$NODE_ENV"
 
-if [ "$NODE_ENV" == "production" ]
+if [ "$NODE_ENV" == "development" ]
 then
-    node src/index.js
-else
     ./node_modules/.bin/nodemon src/index.js
+else
+    node src/index.js
 fi
