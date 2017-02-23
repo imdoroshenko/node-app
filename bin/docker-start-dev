@@ -2,13 +2,20 @@
 set -e
 DIR=$(dirname $0)
 cd $DIR/../
+DIR=$(pwd)
 
 APP_NAME=$(bin/app name)
 APP_VERSION=$(bin/app version)
 
-bin/stop-docker
+bin/docker-stop
 
-CMD="docker run -d -p 3000:3000 $APP_NAME:$APP_VERSION"
+CMD="docker run
+    -d
+    -p 3000:3000
+    -v $DIR/src/:/usr/src/app/src/
+    -v $DIR/node_modules/:/usr/src/app/node_modules/
+    -e NODE_ENV=development
+     $APP_NAME:$APP_VERSION"
 
 echo $CMD
 

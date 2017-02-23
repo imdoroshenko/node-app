@@ -1,5 +1,7 @@
 FROM alpine:3.5
 
+ENV NODE_ENV production
+
 #apk add --update nginx
 RUN apk add --update nodejs-current
 RUN mkdir -p /usr/src/app
