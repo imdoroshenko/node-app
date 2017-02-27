@@ -24,7 +24,7 @@
     "convict": "^2.0.0",
     "exceptions": "git://github.com/imdoroshenko/exceptions.git#v1.0.2",
     "express": "^4.14.1",
-    "express-response": "git://github.com/imdoroshenko/express-response.git#v1.0.0",
+    "express-response": "git://github.com/imdoroshenko/express-response.git#v1.0.2",
     "morgan": "^1.8.1",
     "response-time": "^2.3.2"
   },

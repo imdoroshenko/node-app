@@ -1,10 +1,10 @@
 const AppCtrl = require('../controllers/app'),
   ErrorCtrl = require('../controllers/error'),
   Response = require('express-response').Response,
-  JSONResponseDriver = require('express-response').driver.response.json,
-  ExpressDownloadDriver = require('express-response').driver.download.express
+  JSONResponseDriver = require('express-response').drivers.response.json,
+  ExpressDownloadDriver = require('express-response').drivers.download.express
 
-/**
+/**`
  * Routes setup method
  *
  * @method express
