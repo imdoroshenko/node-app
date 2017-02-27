@@ -1,10 +1,8 @@
 const express = require('express')
+const routes = require('./bootstrap/routes')
 const app = express()
 
-app.get('/', function (req, res) {
-  console.log('Hello World!')
-  res.send('Hello World!')
-})
+routes(app, {})
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')

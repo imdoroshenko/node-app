@@ -24,6 +24,7 @@
     "space-unary-ops"  : 2,
     "eol-last"         : [2, "always"],
     "no-console"       : 0,
-    "no-var"           : 2
+    "no-var"           : 2,
+    "no-unused-vars"   : 0
   }
 }

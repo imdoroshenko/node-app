@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/imdoroshenko/node-app#readme",
   "dependencies": {
-    "express": "^4.14.1"
+    "exceptions": "git://github.com/imdoroshenko/exceptions.git#v1.0.2",
+    "express": "^4.14.1",
+    "express-response": "git://github.com/imdoroshenko/express-response.git#v1.0.0"
   },
   "devDependencies": {
     "eslint": "^3.11.1",
