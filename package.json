@@ -20,9 +20,13 @@
   },
   "homepage": "https://github.com/imdoroshenko/node-app#readme",
   "dependencies": {
+    "body-parser": "^1.16.1",
+    "convict": "^2.0.0",
     "exceptions": "git://github.com/imdoroshenko/exceptions.git#v1.0.2",
     "express": "^4.14.1",
-    "express-response": "git://github.com/imdoroshenko/express-response.git#v1.0.0"
+    "express-response": "git://github.com/imdoroshenko/express-response.git#v1.0.0",
+    "morgan": "^1.8.1",
+    "response-time": "^2.3.2"
   },
   "devDependencies": {
     "eslint": "^3.11.1",

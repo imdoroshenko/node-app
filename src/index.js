@@ -1,9 +1,14 @@
-const express = require('express')
-const routes = require('./bootstrap/routes')
-const app = express()
+const express = require('express'),
+  conf = require('./config.js'),
+  routes = require('./bootstrap/routes'),
+  middleware = require('./bootstrap/middleware'),
+  app = express()
 
+middleware.pre(app, conf)
 routes(app, {})
+middleware.post(app, conf)
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+app.listen(conf.get('http.port'), () => {
+  console.log(`Server started and listening to port ${conf.get('http.port')}`)
 })
+

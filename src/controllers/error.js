@@ -1,4 +1,4 @@
-const NotFound = require('exceptions').NotFound
+const {NotFound} = require('exceptions')
 
 /**
  * Return information about current state of API

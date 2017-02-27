@@ -11,8 +11,9 @@ bin/docker-stop
 
 CMD="docker run
     -d
-    -p 3000:3000
+    -p 3000:8080
     -v $DIR/src/:/usr/src/app/src/
+    -v $DIR/config/:/usr/src/app/config/
     -v $DIR/node_modules/:/usr/src/app/node_modules/
     -e NODE_ENV=development
      $APP_NAME:$APP_VERSION"

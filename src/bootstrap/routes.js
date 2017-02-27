@@ -4,13 +4,21 @@ const AppCtrl = require('../controllers/app'),
   JSONResponseDriver = require('express-response').driver.response.json,
   ExpressDownloadDriver = require('express-response').driver.download.express
 
+/**
+ * Routes setup method
+ *
+ * @method express
+ * @for Bootstrap
+ * @param app {express} instance of express
+ * @param config {Object} application config
+ * @return {undefined}
+ */
 module.exports = function (app, config){
   const response = new Response()
     .setLogLevel(Response.LOG_ERROR)
     .setConfig(config)
     .setResponseDriver(JSONResponseDriver)
     .setDownloadDriver(ExpressDownloadDriver)
-
 
   //hello world
   app.get('/', function (req, res) {
@@ -28,7 +36,7 @@ module.exports = function (app, config){
   //errors
   const errorCtrl = new ErrorCtrl(response)
   // 404
-  app.use(errorCtrl.notFoundAction.bind(appCtrl))
+  app.use(errorCtrl.notFoundAction.bind(errorCtrl))
   // errors
-  app.use(errorCtrl.errorAction.bind(appCtrl))
+  app.use(errorCtrl.errorAction.bind(errorCtrl))
 }
