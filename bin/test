@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+set -e
+DIR=$(dirname $0)
+cd $DIR/../
+
+./bin/eslint
+./bin/mocha
+
