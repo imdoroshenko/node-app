@@ -1,0 +1,119 @@
+swagger: '2.0'
+info:
+  title: Node-app
+  description: Skeleton app for NodeJS projects
+  version: "1.0.0"
+host: localhost
+schemes:
+  - http
+basePath: /
+produces:
+  - application/json
+paths:
+  /:
+    get:
+      summary: Hello world
+      description: |
+        This is simple test endpoint thay say "Hello world"
+      responses:
+        200:
+          description: | 
+            "Hello world" message
+          schema:
+            type: string
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /application:
+    get:
+      summary: Application status
+      description: |
+        Application status endpoint returns current application stats like name, version, uptime
+      tags:
+        - Application
+        - Health Check
+      responses:
+        200:
+          description: Application status object
+          schema:
+            $ref: '#/definitions/ApplicationStatus'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /application/name:
+    get:
+      summary: Application name
+      description: Return application name
+      tags:
+        - Application
+        - Health Check
+      responses:
+        200:
+          description: Application name
+          schema:
+            $ref: '#/definitions/ApplicationName'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /application/version:
+    get:
+      summary: Application version
+      description: Return application version
+      tags:
+        - Application
+        - Health Check
+      responses:
+        200:
+          description: Application version
+          schema:
+            $ref: '#/definitions/ApplicationVersion'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /application/uptime:
+    get:
+      summary: Application uptime
+      description: Return application uptime
+      tags:
+        - Application
+        - Health Check
+      responses:
+        200:
+          description: Application uptime
+          schema:
+            $ref: '#/definitions/ApplicationUptime'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+
+definitions:
+  ApplicationStatus:
+    type: object
+    properties:
+      name:
+        $ref: '#/definitions/ApplicationName'
+      uptime:
+        $ref: '#/definitions/ApplicationUptime'
+      version:
+        $ref: '#/definitions/ApplicationVersion'
+  ApplicationName:
+    type: string
+  ApplicationVersion:
+    type: string
+  ApplicationUptime:
+    type: integer
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string
