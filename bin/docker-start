@@ -3,12 +3,14 @@ set -e
 DIR=$(dirname $0)
 cd $DIR/../
 
+. config/settings
+
 APP_NAME=$(bin/app name)
 APP_VERSION=$(bin/app version)
 
 bin/docker-stop
 
-CMD="docker run -d -p 8080:8080 $APP_NAME:$APP_VERSION"
+CMD="docker run -d -p $DOCKER_PROD__PORT:$DOCKER__APP_EXPOSED_PORT $APP_NAME:$APP_VERSION"
 
 echo $CMD
 

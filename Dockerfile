@@ -4,10 +4,12 @@ ENV NODE_ENV production
 
 #apk add --update nginx
 RUN apk add --update nodejs-current
+RUN apk add --update git
 RUN mkdir -p /usr/src/app
 
-COPY bin /usr/src/app/bin
-COPY src /usr/src/app/src
+COPY bin /usr/src/app/bin/
+COPY config /usr/src/app/config/
+COPY src /usr/src/app/src/
 COPY package.json /usr/src/app/
 
 WORKDIR /usr/src/app

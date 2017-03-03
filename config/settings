@@ -1,0 +1,12 @@
+# ==== PATHS ====
+APP__PATH_SRC=src
+APP__PATH_CONFIG=config
+APP__PATH_NODE_MODULES=node_modules
+
+# ==== DOCKER ====
+DOCKER__DOCKERFILE=./tools/docker/Dockerfile
+DOCKER__APP_EXPOSED_PORT=8080
+# --dev--
+DOCKER_DEV__PORT=3000
+# --production--
+DOCKER_PROD__PORT=8080

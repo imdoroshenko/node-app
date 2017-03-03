@@ -50,6 +50,8 @@ const conf = convict({
   },
 })
 
+console.log(conf.get('env'))
+
 // Load environment dependent configuration
 const env = conf.get('env')
   ;[`${__dirname}/../config/default.json`, `${__dirname}/../config/${env}.json'`]

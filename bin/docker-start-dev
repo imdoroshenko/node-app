@@ -4,6 +4,8 @@ DIR=$(dirname $0)
 cd $DIR/../
 DIR=$(pwd)
 
+. config/settings
+
 APP_NAME=$(bin/app name)
 APP_VERSION=$(bin/app version)
 
@@ -11,10 +13,10 @@ bin/docker-stop
 
 CMD="docker run
     -d
-    -p 3000:8080
-    -v $DIR/src/:/usr/src/app/src/
-    -v $DIR/config/:/usr/src/app/config/
-    -v $DIR/node_modules/:/usr/src/app/node_modules/
+    -p $DOCKER_DEV__PORT:$DOCKER__APP_EXPOSED_PORT
+    -v $DIR/$APP__PATH_SRC:/usr/src/app/src/
+    -v $DIR/$APP__PATH_CONFIG:/usr/src/app/config/
+    -v $DIR/$APP__PATH_NODE_MODULES:/usr/src/app/node_modules/
     -e NODE_ENV=development
      $APP_NAME:$APP_VERSION"
 
