@@ -1,0 +1,18 @@
+FROM alpine:3.5
+
+ENV NODE_ENV development
+
+#apk add --update nginx
+RUN apk add --update nodejs-current
+RUN apk add --update git
+RUN mkdir -p /usr/src
+
+COPY bin /usr/src/bin/
+COPY config /usr/src/config/
+
+WORKDIR /usr/src
+
+RUN chmod +x bin/*
+RUN chmod +x config/*
+
+ENTRYPOINT ["/usr/src/bin/branch-test"]

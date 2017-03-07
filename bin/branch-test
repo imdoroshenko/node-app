@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+set -e
+DIR=$(dirname $0)
+
+cd $DIR/../
+. config/settings
+
+rm -rf ./app
+
+git clone $APP__GIT_REPO app && cd app && git checkout $1 && npm i && npm test
+
+rm -rf ../app
