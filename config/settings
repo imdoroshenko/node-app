@@ -1,3 +1,7 @@
+# ==== REPO ====
+
+APP__GIT_REPO=https://github.com/imdoroshenko/node-app.git
+
 # ==== PATHS ====
 APP__PATH_SRC=src
 APP__PATH_CONFIG=config
